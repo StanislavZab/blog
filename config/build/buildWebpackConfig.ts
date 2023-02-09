@@ -14,7 +14,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         devServer: isDev ? buildDevServer(options) : undefined,
         entry: paths.entry,
         module: buildLoaders(options),
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         output: {
             path: paths.build,
             filename: '[name].[contenthash:8].js',

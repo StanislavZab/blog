@@ -1,11 +1,12 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "./app";
-import ThemeProvider from "./theme/ThemeProvider";
+import App from "app/app";
+import { ThemeProvider } from "app/providers/ThemeProvider";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import "shared/config/i18n/i18n";
 
-root.render(
+
+ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
         <ThemeProvider>
             <App/>  
