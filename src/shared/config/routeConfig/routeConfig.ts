@@ -1,4 +1,4 @@
-import { fchmod } from "fs"
+import { fchmod } from 'fs';
 
 export enum AppRoutes {
     MAIN = 'main',
@@ -7,6 +7,5 @@ export enum AppRoutes {
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about'
-}
-
+    [AppRoutes.ABOUT]: '/about',
+};
