@@ -4,7 +4,7 @@
     height: 80px;
 }
 
-.ldsDualRing:after {
+.ldsDualRing::after {
     content: " ";
     display: block;
     width: 64px;
@@ -18,9 +18,10 @@
 
 @keyframes ldsDualRing {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }

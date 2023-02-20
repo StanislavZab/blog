@@ -1,6 +1,7 @@
 {
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true, 
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true 
     },
     "i18n-ally.localesPaths": [
         "public/locales",
@@ -10,4 +11,8 @@
     "eslint.validate": ["typescript", "typescriptreact"],
     "eslint.enable": true,
     "eslint.codeActionsOnSave.mode": "all",
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "stylelint.validate": ["css", "scss"]
 }
