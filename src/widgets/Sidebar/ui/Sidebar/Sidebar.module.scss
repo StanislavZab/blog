@@ -17,8 +17,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .lang {
-    margin-left: 20px;
+    padding: 10px;
 }

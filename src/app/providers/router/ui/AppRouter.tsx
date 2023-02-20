@@ -1,11 +1,10 @@
-import { log } from 'console';
-import { fchmod } from 'fs';
-import { Suspense } from 'react';
+import { FC, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { PageLoader } from 'widgets/PageLoader';
 import { routerConfig } from './RouterConfig';
 
-const AppRouter: React.FC = () => (
-    <Suspense fallback={<div>Loading...</div>}>
+const AppRouter: FC = () => (
+    <Suspense fallback={<PageLoader />}>
         <Routes>
             {Object.values(routerConfig).map(({ element, path }) => (
                 <Route

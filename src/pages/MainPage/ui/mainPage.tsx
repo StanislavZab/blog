@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const MainPage: React.FC = () => {
+const MainPage: FC = () => {
     const { t, i18n } = useTranslation();
 
     return (

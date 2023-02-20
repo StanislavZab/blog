@@ -1,9 +1,9 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {
-    DefinePlugin, WebpackPluginInstance, ProgressPlugin, HotModuleReplacementPlugin,
+    DefinePlugin, type WebpackPluginInstance, ProgressPlugin, HotModuleReplacementPlugin,
 } from 'webpack';
-import { BuildOptions } from './types/config';
+import { type BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
     return [
