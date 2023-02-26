@@ -33,8 +33,6 @@ jobs:
             - name: build storybook
               run: npm run storybook:build
               if: always()
-            - name: update screenshots
-              run: npx loki update --reactUri="file:./storybook-static"
             - name: screenshot testing
               run: npm run test:ui:ci
               if: always()
