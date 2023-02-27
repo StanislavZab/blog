@@ -2,11 +2,11 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const MainPage: FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <div>
-            <h1>{t('Главная страница')}</h1>
+            {t('Главная страница')}
         </div>
     );
 };
