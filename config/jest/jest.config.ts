@@ -1,8 +1,11 @@
 import path from 'path';
 
 export default {
-    clearMocks: true,
+    globals: {
+        __IS_DEV__: true,
+    },
 
+    clearMocks: true,
     testEnvironment: 'jsdom',
 
     coveragePathIgnorePatterns: [
