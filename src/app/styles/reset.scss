@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 input,
@@ -10,4 +9,10 @@ textarea,
 select {
     margin: 0;
     font: inherit;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
