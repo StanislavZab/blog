@@ -36,7 +36,6 @@ export const Input: React.FC<InputProps> = memo((props) => {
                 onChange={onChangeHandler}
                 id={id}
                 name={name}
-                placeholder="alexander@itchief.ru"
                 {...otherProps}
             />
             <label
