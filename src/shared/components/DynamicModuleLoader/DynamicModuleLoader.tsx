@@ -19,30 +19,30 @@ export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> = (props) =
     const {
         children,
         reducers,
-        removeAfterUnmount = true,
+        removeAfterUnmount,
     } = props;
     const store = useStore() as ReduxStoreWithManager;
     const dispatch = useDispatch();
 
     useEffect(() => {
-        Object.entries(reducers).forEach(([key, reducer]: ReducersListEntry) => {
-            store.reducerManager.add(key, reducer);
+        Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
+            store.reducerManager.add(name, reducer);
+            dispatch({ type: `@INIT ${name} reducer` });
         });
 
-        if (removeAfterUnmount) {
-            return () => {
-                Object.entries(reducers).forEach(([key, reducer]: ReducersListEntry) => {
-                    store.reducerManager.remove(key);
+        return () => {
+            if (removeAfterUnmount) {
+                Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
+                    store.reducerManager.remove(name);
+                    dispatch({ type: `@DESTROY ${name} reducer` });
                 });
-            };
-        }
-
-        return () => {};
+            }
+        };
         // eslint-disable-next-line
     }, []);
 
     return (
-        // eslint-disable-next-line
+        // eslint-disable-next-line react/jsx-no-useless-fragment
         <>
             {children}
         </>
