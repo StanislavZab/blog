@@ -9,14 +9,14 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import 'app/styles/index.scss';
 import { StoreProvider } from 'app/providers/StoreProvider';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <StoreProvider>
-        <BrowserRouter>
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+    <BrowserRouter>
+        <StoreProvider>
             <ErrorBoundary>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
             </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>,
+        </StoreProvider>
+    </BrowserRouter>,
 );

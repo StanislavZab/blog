@@ -17,7 +17,7 @@ import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLo
 
 export interface LoginFormProps {
     className?: string;
-    onSuccess: () => void;
+    onSuccess?: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -48,20 +48,20 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
-            onSuccess();
+            onSuccess?.();
         }
     }, [dispatch, onSuccess, password, username]);
 
     return (
-        <DynamicModuleLoader reducers={initialReducers}>
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls.loginForm, {}, [className])}>
                 <Text title={t('Форма авториизации')} />
-                {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
+                {error && <Text text={t('Вы ввели неверный логин или пароль') as string} theme={TextTheme.ERROR} />}
                 <Input
                     type="email"
                     className={cls.input}
                     name="email"
-                    label={t('Username')}
+                    label={t('Username') as string}
                     onChange={onChangeUsername}
                     value={username}
                 />
@@ -69,7 +69,7 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
                     type="password"
                     className={cls.input}
                     name="pass"
-                    label={t('Password')}
+                    label={t('Password') as string}
                     onChange={onChangePassword}
                     value={password}
                 />

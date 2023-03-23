@@ -10,7 +10,7 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        setAuthrData(store, action: PayloadAction<User>) {
+        setAuthData(store, action: PayloadAction<User>) {
             store.authData = action.payload;
         },
         initAuthData(store) {
