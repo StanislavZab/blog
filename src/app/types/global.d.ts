@@ -14,6 +14,11 @@ declare module '*.png' {
 	export = value;
 }
 
+declare module '*.jpg' {
+	const value: any;
+	export = value;
+}
+
 declare const __IS_DEV__: boolean;
 declare const __API__: string;
 
