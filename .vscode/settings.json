@@ -16,9 +16,6 @@
     "scss.validate": false,
     "stylelint.validate": ["css", "scss"],
     "files.eol": "\n",
-    "i18n-ally.extract.ignored": [
-        "Отменить"
-    ],
     "i18n-ally.keystyle": "flat",
     "i18n-ally.sourceLanguage": "ru",
 }

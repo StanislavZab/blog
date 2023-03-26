@@ -1,0 +1,8 @@
+{
+    "omitParentDirectory": true,
+    "openFilesWhenDone": [
+        "[FTName].tsx",
+        "[FTName].stories.tsx",
+        "[FTName].module.scss"
+    ]
+}
