@@ -5,7 +5,9 @@ import {
 } from 'webpack';
 import { type BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): WebpackPluginInstance[] {
+export function buildPlugins({
+    paths, isDev, apiUrl, project,
+}: BuildOptions): WebpackPluginInstance[] {
     return [
         new ProgressPlugin(),
         new HtmlWebpackPlugin({
@@ -18,6 +20,7 @@ export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): WebpackPlu
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project),
         }),
         new HotModuleReplacementPlugin(),
     ];

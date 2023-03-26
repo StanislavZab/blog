@@ -10,5 +10,10 @@
   "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
   "Попробуйте обновить страницу": "Try refreshing the page",
   "username": "Username",
-  "Avatar": "Avatar"
+  "Avatar": "Avatar",
+  "Имя и фамилия обязательны": "First and last name required",
+  "Некорректный возраст": "Incorrect age",
+  "Некорректный регион": "Incorrect region",
+  "Данные не указаны": "Data not specified",
+  "Серверная ошибка при сохранении": "Server error when saving"
 }
