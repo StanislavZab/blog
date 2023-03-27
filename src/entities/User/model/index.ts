@@ -1,6 +1,5 @@
-export {
-    getUserAuthData,
-} from './selectors/getUserAuthData/getUserAuthData';
+export { getUserAuthData } from './selectors/getUserAuthData/getUserAuthData';
+export { getUserInited } from './selectors/getUserInited/getUserInited';
 
 export {
     userActions,

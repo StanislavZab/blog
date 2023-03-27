@@ -3,23 +3,25 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { User, UserSchema } from '../types/user';
 
 const initialState: UserSchema = {
-
+    _inited: false,
 };
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        setAuthData(store, action: PayloadAction<User>) {
-            store.authData = action.payload;
+        setAuthData(state, action: PayloadAction<User>) {
+            state.authData = action.payload;
         },
-        initAuthData(store) {
+        initAuthData(state) {
             const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
-            if (user) store.authData = JSON.parse(user);
+            if (user) state.authData = JSON.parse(user);
+
+            state._inited = true;
         },
-        logout(store) {
-            store.authData = undefined;
+        logout(state) {
+            state.authData = undefined;
             localStorage.removeItem(USER_LOCALSTORAGE_KEY);
         },
     },
