@@ -129,7 +129,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                 <CountrySelect
                     className={cls.input}
                     value={data?.country}
-                    onChang={onChangeCountry}
+                    onChange={onChangeCountry}
                     readonly={readonly}
                 />
             </div>

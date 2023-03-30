@@ -9,6 +9,7 @@ export interface SidebarItemType {
     text: string;
     Icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
     authOnly?: boolean;
+    isId?: boolean;
 }
 
 export const SidebarItemList: SidebarItemType[] = [
@@ -27,11 +28,13 @@ export const SidebarItemList: SidebarItemType[] = [
         Icon: ProfileIcon,
         text: 'Профиль',
         authOnly: true,
+        isId: true,
     },
     {
         path: RoutePath.articles,
         Icon: ArticleIcon,
         text: 'Статьи',
         authOnly: true,
+        isId: true,
     },
 ];

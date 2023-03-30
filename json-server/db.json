@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "1",
+      "id": "YqQvgm4"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "jjhhj",
+      "id": "xU4e81O"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "asdf",
+      "id": "1BglDkh"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "dhddfgddhdfh",
+      "id": "uF8BEhH"
     }
   ],
   "users": [
@@ -118,14 +144,28 @@
       "avatar": "https://avatars.mds.yandex.net/get-mpic/5359986/img_id2246569404830946444.jpeg/orig"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://heaclub.ru/tim/dcf9cb32b980281e3e733a281c6c8da5/milaya-kartinka-na-avu-dlya-parnei.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://kartinkin.net/uploads/posts/2022-03/1646196531_31-kartinkin-net-p-kartinki-khakera-38.jpg"
+    },
+    {
+      "id": "2",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "user",
+      "avatar": "https://avatars.mds.yandex.net/get-mpic/5359986/img_id2246569404830946444.jpeg/orig"
+    }
+  ]
 }

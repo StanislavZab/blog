@@ -34,7 +34,7 @@ export const Input: React.FC<InputProps> = memo((props) => {
     };
 
     return (
-        <div className={classNames('', mods, [cls.wrapper, cls.floating])}>
+        <div className={classNames('', mods, [className, cls.wrapper, cls.floating])}>
             <input
                 className={cls.input}
                 type={type}

@@ -21,6 +21,8 @@ export const SidebarItem: React.FC<SidebarItemProps> = memo((props) => {
     const { t } = useTranslation();
     const isAuth = useSelector(getUserAuthData);
 
+    const path = item.isId ? `${item.path}${isAuth?.id}` : item.path;
+
     if (item.authOnly && !isAuth) {
         return null;
     }
@@ -28,7 +30,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = memo((props) => {
     return (
         <AppLink
             theme={AppLinkTheme.SECONDARY}
-            to={item.path}
+            to={path}
             className={classNames(cls.item, { [cls.collapsed]: collapsed })}
         >
             <item.Icon className={cls.icon} />
