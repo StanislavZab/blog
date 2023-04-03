@@ -34,7 +34,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
 
     if (authUser) {
         return (
-            <div className={classNames(cls.navbar, {}, [className])}>
+            <header className={classNames(cls.navbar, {}, [className])}>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
                     className={cls.links}
@@ -42,7 +42,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                 >
                     {t('Выйти')}
                 </Button>
-            </div>
+            </header>
         );
     }
 

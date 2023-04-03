@@ -9,9 +9,9 @@ import { AppRoutesProps, routerConfig } from './RouterConfig';
 const AppRouter: FC = () => {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
         const element = (
-            <div className="page-wrapper">
+            <>
                 {route.element}
-            </div>
+            </>
         );
 
         return (

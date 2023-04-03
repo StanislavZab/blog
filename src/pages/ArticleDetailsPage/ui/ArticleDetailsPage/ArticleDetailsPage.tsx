@@ -1,8 +1,7 @@
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/addCommentForm';
-import { getArticleDetailsCommentError, getArticleDetailsCommentIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
-import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentFoArticle/addCommentForarticle';
+import { getArticleDetailsCommentIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +14,8 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
+import { addCommentForArticle } from '../../model/services/addCommentFoArticle/addCommentForArticle';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 
@@ -52,15 +53,15 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
 
     if (!id) {
         return (
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                     {t('Назад к списку')}
                 </Button>
@@ -71,7 +72,7 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

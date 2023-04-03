@@ -45,6 +45,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'max-len': ['error', { ignoreComments: true, code: 150 }],
         'consistent-return': 'off',
+        'react/jsx-no-useless-fragment': 'off',
     },
     globals: {
         __IS_DEV__: true,

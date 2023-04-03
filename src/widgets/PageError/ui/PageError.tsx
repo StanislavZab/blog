@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
@@ -15,11 +16,11 @@ export const PageError: React.FC<PageErrorProps> = ({ className }) => {
     };
 
     return (
-        <div className={classNames(cls.pageError, {}, [className])}>
+        <Page className={classNames(cls.pageError, {}, [className])}>
             <p>{t('Произошла непредвиденная ошибка')}</p>
             <button type="button" onClick={reloadPage}>
                 {t('Обновить страницу')}
             </button>
-        </div>
+        </Page>
     );
 };

@@ -32,7 +32,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     )), [collaosed, sidebarItemList]);
 
     return (
-        <div data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collaosed }, [className])}>
+        <menu data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collaosed }, [className])}>
             <Button
                 data-testid="sidebar-toggle"
                 type="button"
@@ -51,6 +51,6 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 <ThemeSwitcher className={cls.lang} />
                 <LangSwitcher short={collaosed} className={cls.lang} />
             </div>
-        </div>
+        </menu>
     );
 });
