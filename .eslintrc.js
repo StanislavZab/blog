@@ -46,6 +46,7 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 150 }],
         'consistent-return': 'off',
         'react/jsx-no-useless-fragment': 'off',
+        'react/no-array-index-key': 'off',
     },
     globals: {
         __IS_DEV__: true,
