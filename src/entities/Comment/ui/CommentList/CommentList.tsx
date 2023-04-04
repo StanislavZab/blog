@@ -22,7 +22,12 @@ export const CommentList: React.FC<CommentListProps> = memo((props) => {
         <div className={classNames(cls.commentlist, {}, [className])}>
             {comments?.length
                 ? comments.map((comment) => (
-                    <CommentCard className={cls.comment} isLoading={isLoading} comment={comment} />
+                    <CommentCard
+                        className={cls.comment}
+                        isLoading={isLoading}
+                        comment={comment}
+                        key={comment.id}
+                    />
                 ))
                 : <Text text="Комментарии отсутствуют" />}
         </div>

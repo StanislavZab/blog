@@ -1,5 +1,4 @@
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import TiledIcon from 'shared/assets/icons/tiled-24-24.svg';
@@ -32,8 +31,6 @@ export const ArticleViewSelector: React.FC<ArticleViewSelectorProps> = memo((pro
         onViewClick,
     } = props;
 
-    const { t } = useTranslation();
-
     const onClick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
     };
@@ -44,6 +41,7 @@ export const ArticleViewSelector: React.FC<ArticleViewSelectorProps> = memo((pro
                 <Button
                     theme={ButtonTheme.CLEAR}
                     onClick={onClick(viewType.view)}
+                    key={viewType.view}
                 >
                     <Icon
                         Svg={viewType.icon}
