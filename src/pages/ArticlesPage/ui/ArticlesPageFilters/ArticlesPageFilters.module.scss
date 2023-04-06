@@ -1,0 +1,27 @@
+.sortWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    margin-top: 16px;
+
+    .input {
+        width: 100%;
+    }
+
+    .input:focus {
+        color: var(--primary-color);
+        background: #fff;
+        border-color: #bdbdbd;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgb(158 158 158 / 25%);
+    }
+}
+
+.tabs {
+    margin-top: 16px;
+}
+
+
