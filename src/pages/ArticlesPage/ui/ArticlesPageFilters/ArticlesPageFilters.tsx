@@ -71,8 +71,8 @@ export const ArticlesPageFilters: React.FC<ArticlesPageFiltersProps> = memo((pro
     const onChangeType = useCallback((type: ArticleType) => {
         dispatch(articlesPageActions.setType(type));
         dispatch(articlesPageActions.setPage(1));
-        debounceFetchData();
-    }, [dispatch, debounceFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     return (
         <div className={classNames(cls.articlespagefilters, {}, [className])}>
