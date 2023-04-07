@@ -7,6 +7,9 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import cls from './Navbar.module.scss';
 
 type NavbarProps = {
@@ -35,6 +38,17 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     if (authUser) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
+                <Text
+                    className={cls.appName}
+                    title={authUser.username}
+                    theme={TextTheme.INVERTED}
+                />
+                <AppLink
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('Создать статью')}
+                </AppLink>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
                     className={cls.links}
