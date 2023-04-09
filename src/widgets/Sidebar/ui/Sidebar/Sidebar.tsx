@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from './model/selectors/getSidebarItems';
 
@@ -44,9 +45,9 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             >
                 { collaosed ? '>' : '<' }
             </Button>
-            <div className={cls.items}>
+            <VStack gap="8" className={cls.items}>
                 {itemList}
-            </div>
+            </VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher className={cls.lang} />
                 <LangSwitcher short={collaosed} className={cls.lang} />

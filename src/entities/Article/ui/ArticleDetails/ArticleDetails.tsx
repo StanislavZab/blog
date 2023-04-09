@@ -1,6 +1,4 @@
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -13,6 +11,9 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails';
 import cls from './ArticleDetails.module.scss';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
@@ -80,27 +81,29 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = memo((props) => {
     } else {
         content = (
             <>
-                <div className={cls.avatarWrapper}>
+                <HStack justify="center" max className={cls.avatarWrapper}>
                     <Avatar
                         size={200}
                         src={article?.img}
                         className={cls.avatar}
                     />
-                </div>
-                <Text
-                    title={article?.title}
-                    text={article?.subtitle}
-                    className={cls.title}
-                    size={TextSize.L}
-                />
-                <div className={cls.articleInfo}>
-                    <Icon Svg={EyeIcon} className={cls.logo} />
-                    <Text text={String(article?.views)} />
-                </div>
-                <div className={cls.articleInfo}>
-                    <Icon Svg={CalendarIcon} className={cls.logo} />
-                    <Text text={article?.createdAt} />
-                </div>
+                </HStack>
+                <VStack gap="4" max>
+                    <Text
+                        title={article?.title}
+                        text={article?.subtitle}
+                        className={cls.title}
+                        size={TextSize.L}
+                    />
+                    <HStack gap="8" className={cls.articleInfo}>
+                        <Icon Svg={EyeIcon} className={cls.logo} />
+                        <Text text={String(article?.views)} />
+                    </HStack>
+                    <HStack gap="8" className={cls.articleInfo}>
+                        <Icon Svg={CalendarIcon} className={cls.logo} />
+                        <Text text={article?.createdAt} />
+                    </HStack>
+                </VStack>
                 {article?.blocks.map(renderBlock)}
             </>
         );
@@ -108,9 +111,9 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = memo((props) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.articledetails, {}, [className])}>
+            <VStack gap="16" className={classNames(cls.articledetails, {}, [className])}>
                 {content}
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });

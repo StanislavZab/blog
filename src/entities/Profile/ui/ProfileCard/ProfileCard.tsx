@@ -6,6 +6,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
@@ -46,22 +47,22 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.profileCard, {}, [className, cls.loading])}>
+            <HStack justify="center" max className={classNames(cls.profileCard, {}, [className, cls.loading])}>
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
+            <HStack justify="center" max className={classNames(cls.profileCard, {}, [className, cls.error])}>
                 <Text
                     align={TextAlign.CENTER}
                     title={t('Произошла ошибка при загрузке профиля')}
                     theme={TextTheme.ERROR}
                     text={t('Попробуйте обновить страницу') as string}
                 />
-            </div>
+            </HStack>
         );
     }
 
@@ -70,69 +71,67 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
     };
 
     return (
-        <div className={classNames(cls.profileCard, mods, [className])}>
-            <div className={cls.data}>
-                {data?.avatar
+        <VStack gap="16" max className={classNames(cls.profileCard, mods, [className])}>
+            {data?.avatar
                     && (
-                        <div className={cls.avatarWrapper}>
+                        <HStack justify="center" max className={cls.avatarWrapper}>
                             <Avatar alt="" src={data?.avatar} />
-                        </div>
+                        </HStack>
                     )}
-                <Input
-                    readonly={readonly}
-                    value={data?.first}
-                    label={t('Имя') as string}
-                    className={cls.input}
-                    onChange={onChangeFirstname}
-                />
-                <Input
-                    readonly={readonly}
-                    value={data?.lastname}
-                    label={t('Фамилия') as string}
-                    className={cls.input}
-                    onChange={onChangeLastname}
-                />
-                <Input
-                    readonly={readonly}
-                    value={data?.age}
-                    label={t('Возраст') as string}
-                    className={cls.input}
-                    onChange={onChangeAge}
-                />
-                <Input
-                    readonly={readonly}
-                    value={data?.city}
-                    label={t('Город') as string}
-                    className={cls.input}
-                    onChange={onChangeCity}
-                />
-                <Input
-                    readonly={readonly}
-                    value={data?.username}
-                    label={t('username') as string}
-                    className={cls.input}
-                    onChange={onChangeUsername}
-                />
-                <Input
-                    readonly={readonly}
-                    value={data?.avatar}
-                    label={t('Avatar') as string}
-                    className={cls.input}
-                    onChange={onChangeAvatar}
-                />
-                <CurrencySelect
-                    className={cls.input}
-                    value={data?.currency}
-                    onChang={onChangeCurrency}
-                    readonly={readonly}
-                />
-                <CountrySelect
-                    className={cls.input}
-                    value={data?.country}
-                    onChange={onChangeCountry}
-                    readonly={readonly}
-                />
-            </div>
-        </div>
+            <Input
+                readonly={readonly}
+                value={data?.first}
+                label={t('Имя') as string}
+                className={cls.input}
+                onChange={onChangeFirstname}
+            />
+            <Input
+                readonly={readonly}
+                value={data?.lastname}
+                label={t('Фамилия') as string}
+                className={cls.input}
+                onChange={onChangeLastname}
+            />
+            <Input
+                readonly={readonly}
+                value={data?.age}
+                label={t('Возраст') as string}
+                className={cls.input}
+                onChange={onChangeAge}
+            />
+            <Input
+                readonly={readonly}
+                value={data?.city}
+                label={t('Город') as string}
+                className={cls.input}
+                onChange={onChangeCity}
+            />
+            <Input
+                readonly={readonly}
+                value={data?.username}
+                label={t('username') as string}
+                className={cls.input}
+                onChange={onChangeUsername}
+            />
+            <Input
+                readonly={readonly}
+                value={data?.avatar}
+                label={t('Avatar') as string}
+                className={cls.input}
+                onChange={onChangeAvatar}
+            />
+            <CurrencySelect
+                className={cls.input}
+                value={data?.currency}
+                onChang={onChangeCurrency}
+                readonly={readonly}
+            />
+            <CountrySelect
+                className={cls.input}
+                value={data?.country}
+                onChange={onChangeCountry}
+                readonly={readonly}
+            />
+        </VStack>
     );
 };

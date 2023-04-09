@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDiapatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
@@ -41,7 +42,7 @@ const AddCommentForm: React.FC<AddCommentFormProps> = memo((props) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.addCommentForm, {}, [className])}>
+            <HStack justify="between" max className={classNames(cls.addCommentForm, {}, [className])}>
                 <Input
                     className={cls.input}
                     value={text}
@@ -54,7 +55,7 @@ const AddCommentForm: React.FC<AddCommentFormProps> = memo((props) => {
                 >
                     {t('Отправить')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 });
