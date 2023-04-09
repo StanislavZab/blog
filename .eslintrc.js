@@ -12,7 +12,9 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
-        'react-hooks'],
+        'react-hooks',
+        'hrustik-st-plugin',
+    ],
     rules: {
         indent: [2, 4],
         'react/jsx-indent': [2, 4],
@@ -47,6 +49,7 @@ module.exports = {
         'consistent-return': 'off',
         'react/jsx-no-useless-fragment': 'off',
         'react/no-array-index-key': 'off',
+        'hrustik-st-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
