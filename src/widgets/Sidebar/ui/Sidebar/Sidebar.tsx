@@ -33,7 +33,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     )), [collaosed, sidebarItemList]);
 
     return (
-        <menu data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collaosed }, [className])}>
+        <aside data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collaosed }, [className])}>
             <Button
                 data-testid="sidebar-toggle"
                 type="button"
@@ -45,13 +45,13 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             >
                 { collaosed ? '>' : '<' }
             </Button>
-            <VStack gap="8" className={cls.items}>
+            <VStack role="navigation" gap="8" className={cls.items}>
                 {itemList}
             </VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher className={cls.lang} />
                 <LangSwitcher short={collaosed} className={cls.lang} />
             </div>
-        </menu>
+        </aside>
     );
 });
