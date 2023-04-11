@@ -6,8 +6,8 @@ import { DynamicModuleLoader, ReducersList } from 'shared/components/DynamicModu
 import { useAppDispatch } from 'shared/lib/hooks/useAppDiapatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from 'widgets/Page/Page';
-import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 import { useSearchParams } from 'react-router-dom';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
     getArticlesPageIsLoading,
     getArticlesPageView,
