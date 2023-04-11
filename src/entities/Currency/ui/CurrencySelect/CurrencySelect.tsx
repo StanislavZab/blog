@@ -40,7 +40,7 @@ export const CurrencySelect: React.FC<CurrencySelectProps> = memo((props) => {
             value={value}
             defaultValue={t('Выберите валюту') as string}
             label={t('Укажите валюту') as string}
-            direction="top"
+            direction="top left"
         />
     );
 });

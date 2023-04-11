@@ -20,6 +20,15 @@
     &.top {
         bottom: 100%;
     }
+
+    &.left {
+        right: 0;
+        
+    }
+
+    &.right {
+        left: 0;
+    }
 }
 
 .item {
