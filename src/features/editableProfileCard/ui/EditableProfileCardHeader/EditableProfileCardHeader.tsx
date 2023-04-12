@@ -1,6 +1,3 @@
-import {
-    getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'features/editableProfileCard';
 import { getUserAuthData } from 'entities/User';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -10,12 +7,16 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDiapatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { profileActions } from '../../model/slice/profileSlice';
 
-interface ProfilePageHeaderProps {
+interface EditableProfileCardHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = (props) => {
+export const EditableProfileCardHeader: React.FC<EditableProfileCardHeaderProps> = (props) => {
     const {
         className,
     } = props;
@@ -54,6 +55,7 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = (props) => {
                     <Button
                         theme={ButtonTheme.OUTLINE}
                         onClick={onEdit}
+                        data-testid="EditableProfileCardHeader.EditButton"
                     >
                         {t('Редактировать')}
                     </Button>
@@ -63,12 +65,14 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = (props) => {
                         <Button
                             theme={ButtonTheme.OUTLINE_RED}
                             onClick={onCancelEdit}
+                            data-testid="EditableProfileCardHeader.CancelButton"
                         >
                             {t('Отменить')}
                         </Button>
                         <Button
                             theme={ButtonTheme.OUTLINE}
                             onClick={onSave}
+                            data-testid="EditableProfileCardHeader.SaveButton"
                         >
                             {t('Сохранить')}
                         </Button>

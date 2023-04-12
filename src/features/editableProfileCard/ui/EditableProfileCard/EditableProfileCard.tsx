@@ -18,6 +18,7 @@ import { getProfileError } from '../../model/selectors/getProfileError/getProfil
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 const initialReducers: ReducersList = {
     profile: profileReducer,
@@ -25,7 +26,7 @@ const initialReducers: ReducersList = {
 
 interface EditableProfileCardProps {
     className?: string;
-    id?: string;
+    id: string;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -87,8 +88,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <VStack gap="8" max className={classNames('', {}, [className])}>
+                <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text
+                        data-testid="EditableProfileCard.Error"
                         key={err}
                         theme={TextTheme.ERROR}
                         text={validateErrorsTranslates[err]}

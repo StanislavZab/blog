@@ -11,7 +11,7 @@ export enum ValidateProfileError {
 export interface ProfileSchema {
     data?: Profile;
     form?: Profile;
-    isLoading: boolean;
+    isLoading?: boolean;
     error?: string;
     readonly: boolean;
     validateError?: ValidateProfileError[];

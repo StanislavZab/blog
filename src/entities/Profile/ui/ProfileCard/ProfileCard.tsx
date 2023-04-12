@@ -84,6 +84,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                 label={t('Имя') as string}
                 className={cls.input}
                 onChange={onChangeFirstname}
+                data-testid="ProfileCard.firstname"
             />
             <Input
                 readonly={readonly}
@@ -91,6 +92,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                 label={t('Фамилия') as string}
                 className={cls.input}
                 onChange={onChangeLastname}
+                data-testid="ProfileCard.lastname"
             />
             <Input
                 readonly={readonly}
