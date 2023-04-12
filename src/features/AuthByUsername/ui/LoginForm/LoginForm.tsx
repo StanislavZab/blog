@@ -55,7 +55,7 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls.loginForm, {}, [className])}>
-                <Text title={t('Форма авториизации')} />
+                <Text title={t('Форма авториизации') as string} />
                 {error && <Text text={t('Вы ввели неверный логин или пароль') as string} theme={TextTheme.ERROR} />}
                 <Input
                     type="email"

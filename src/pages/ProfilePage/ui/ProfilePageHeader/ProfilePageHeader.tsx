@@ -1,6 +1,6 @@
 import {
     getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'entities/Profile';
+} from 'features/editableProfileCard';
 import { getUserAuthData } from 'entities/User';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -41,14 +41,14 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = (props) => {
     if (authData?.id !== profileData?.id) {
         return (
             <HStack max justify="between" className={classNames('', {}, [className])}>
-                <Text title={t('Профиль')} />
+                <Text title={t('Профиль') as string} />
             </HStack>
         );
     }
 
     return (
         <HStack max justify="between" className={classNames('', {}, [className])}>
-            <Text title={t('Профиль')} />
+            <Text title={t('Профиль') as string} />
             {readonly
                 ? (
                     <Button

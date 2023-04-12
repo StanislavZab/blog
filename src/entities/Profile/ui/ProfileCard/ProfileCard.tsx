@@ -58,7 +58,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
             <HStack justify="center" max className={classNames(cls.profileCard, {}, [className, cls.error])}>
                 <Text
                     align={TextAlign.CENTER}
-                    title={t('Произошла ошибка при загрузке профиля')}
+                    title={t('Произошла ошибка при загрузке профиля') as string}
                     theme={TextTheme.ERROR}
                     text={t('Попробуйте обновить страницу') as string}
                 />

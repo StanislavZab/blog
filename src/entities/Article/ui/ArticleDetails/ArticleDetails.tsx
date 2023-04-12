@@ -75,7 +75,7 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = memo((props) => {
         content = (
             <Text
                 align={TextAlign.CENTER}
-                title={t('Произошла ошибка при загрузке статьи.')}
+                title={t('Произошла ошибка при загрузке статьи.') as string}
             />
         );
     } else {
