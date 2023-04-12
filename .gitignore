@@ -1,4 +1,5 @@
 /build
+/reports
 node_modules
 /storybook-static
 .loki/report.html
