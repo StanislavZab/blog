@@ -22,7 +22,6 @@ type NavbarProps = {
 
 export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     const { t } = useTranslation();
-    const { t: tAdmin } = useTranslation('adminka');
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authUser = useSelector(getUserAuthData);
     const isAdmin = useSelector(isUserAdmin);

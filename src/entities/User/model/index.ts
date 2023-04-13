@@ -13,8 +13,5 @@ export {
     isUserUser,
 } from './selectors/roleSelectors';
 
-export {
-    UserSchema,
-    User,
-    UserRole,
-} from './types/user';
+export type { UserSchema, User } from './types/user';
+export { UserRole } from './consts/consts';

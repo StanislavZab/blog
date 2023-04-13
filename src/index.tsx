@@ -9,7 +9,13 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import 'app/styles/index.scss';
 import { StoreProvider } from 'app/providers/StoreProvider';
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const container = document.getElementById('root');
+
+if (!container) {
+    throw new Error('Контенер root не найден. Не удалось вмонтировать react приложение!');
+}
+
+ReactDOM.createRoot(container).render(
     <BrowserRouter>
         <StoreProvider>
             <ErrorBoundary>

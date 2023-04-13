@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { Suspense, memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { VStack } from 'shared/ui/Stack';
 import { TextSize, Text } from 'shared/ui/Text/Text';
@@ -8,6 +8,7 @@ import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDiapatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Loader } from 'shared/ui/Loader/Loader';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentIsLoading } from '../../model/selectors/comments';
@@ -43,7 +44,9 @@ export const ArticleDetailsComments: React.FC<ArticleDetailsCommentsProps> = mem
                 size={TextSize.L}
                 title={t('Комметнарии') as string}
             />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<Loader />}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentList
                 isLoading={commentsIsLoading}
                 comments={comments}
