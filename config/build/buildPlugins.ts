@@ -4,6 +4,7 @@ import {
     DefinePlugin, type WebpackPluginInstance, ProgressPlugin, HotModuleReplacementPlugin,
 } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 import { type BuildOptions } from './types/config';
 
 export function buildPlugins({
@@ -29,5 +30,9 @@ export function buildPlugins({
             ],
         }),
         new HotModuleReplacementPlugin(),
+        new CircularDependencyPlugin({
+            exclude: /node-modules/,
+            failOnError: true,
+        }),
     ];
 }
