@@ -7,6 +7,14 @@ export {
 } from './slice/userSlice';
 
 export {
+    getUserRoles,
+    isUserManager,
+    isUserAdmin,
+    isUserUser,
+} from './selectors/roleSelectors';
+
+export {
     UserSchema,
     User,
+    UserRole,
 } from './types/user';

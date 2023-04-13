@@ -1,4 +1,6 @@
-import { getUserAuthData, userActions } from 'entities/User/model';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User/model';
 import { LoginModal } from 'features/AuthByUsername/ui/LoginModal/LoginModal';
 import {
     FC, memo, useCallback, useState,
@@ -20,8 +22,11 @@ type NavbarProps = {
 
 export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     const { t } = useTranslation();
+    const { t: tAdmin } = useTranslation('adminka');
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authUser = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
     const dispatch = useDispatch();
 
     const onCloseModal = useCallback(() => {
@@ -36,6 +41,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
         dispatch(userActions.logout());
         setIsAuthModal(false);
     }, [dispatch]);
+
+    const isAdminPanelAvailable = isAdmin || isManager;
 
     if (authUser) {
         return (
@@ -56,6 +63,10 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                     className={cls.links}
                     trigger={<Avatar size={30} src={authUser.avatar} />}
                     items={[
+                        ...(isAdminPanelAvailable ? [{
+                            content: t('Админка'),
+                            href: RoutePath.admin_panel,
+                        }] : []),
                         {
                             content: t('Профиль'),
                             href: RoutePath.profile + authUser.id,
