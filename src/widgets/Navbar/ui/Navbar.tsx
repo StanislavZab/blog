@@ -1,19 +1,19 @@
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from 'entities/User/model';
-import { LoginModal } from 'features/AuthByUsername/ui/LoginModal/LoginModal';
+} from '@/entities/User/model';
+import { LoginModal } from '@/features/AuthByUsername/ui/LoginModal/LoginModal';
 import {
     FC, memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Dropdown } from '@/shared/ui/Dropdown/Dropdown';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import cls from './Navbar.module.scss';
 
 type NavbarProps = {
@@ -81,7 +81,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     }
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <header className={classNames(cls.navbar, {}, [className])}>
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={cls.links}
@@ -95,6 +95,6 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                     isOpen={isAuthModal}
                 />
             )}
-        </div>
+        </header>
     );
 });
