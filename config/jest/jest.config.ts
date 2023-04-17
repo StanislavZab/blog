@@ -36,6 +36,7 @@ export default {
     ],
 
     setupFilesAfterEnv: [
+        '@testing-library/jest-dom',
         '<rootDir>/config/jest/setupTests.ts',
     ],
 
@@ -46,6 +47,7 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '^@/(.*)': '<rootDir>/src/$1',
     },
 
     preset: 'ts-jest',
