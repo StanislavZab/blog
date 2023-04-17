@@ -2,11 +2,11 @@ import { useTranslation } from 'react-i18next';
 import {
     ChangeEvent, memo, useCallback,
 } from 'react';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
 } from '@/entities/Article';
-import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDiapatch/useAppDispatch';
 import { Card } from '@/shared/ui/Card/Card';
 import { SortOrder } from '@/shared/types';

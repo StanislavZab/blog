@@ -1,3 +1,4 @@
+import { type RouteProps } from 'react-router-dom';
 import { UserRole } from '@/entities/User/model';
 import { AboutPage } from '@/pages/AboutPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
@@ -8,7 +9,6 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { type RouteProps } from 'react-router-dom';
 import { AppRoutes, RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 export type AppRoutesProps = RouteProps & {
