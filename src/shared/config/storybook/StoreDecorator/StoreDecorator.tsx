@@ -6,7 +6,7 @@ import { addCommentFormReducer } from '@/features/addCommentForm/model/slice/add
 import { loginReducer } from '@/features/AuthByUsername';
 import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice';
 import { articleDetailsPageRecommendationsReducer } from '@/pages/ArticleDetailsPage/model/slice/articleDetailsPageRecommendationsSlice';
-import { ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,

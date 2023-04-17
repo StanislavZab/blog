@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDiapatch/useAppDispatch';
 import { Page } from '@/widgets/Page/Page';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';

@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Input } from '@/shared/ui/Input/Input';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { DynamicModuleLoader, ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDiapatch/useAppDispatch';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';

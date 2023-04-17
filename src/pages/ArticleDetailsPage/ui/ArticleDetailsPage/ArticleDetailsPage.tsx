@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
-import { DynamicModuleLoader, ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page/Page';
 import { VStack } from '@/shared/ui/Stack';

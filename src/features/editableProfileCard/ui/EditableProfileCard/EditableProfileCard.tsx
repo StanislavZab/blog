@@ -8,7 +8,7 @@ import { Currents } from '@/entities/Currency';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDiapatch/useAppDispatch';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { Country } from '@/entities/Country';
-import { DynamicModuleLoader, ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
